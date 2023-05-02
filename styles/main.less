@@ -1,0 +1,154 @@
+// Шрифты
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&family=Nunito&display=swap");
+
+@background: url("images/background.jpg");
+
+
+// Блок по центру
+.centerBlock() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Текст посередине
+.centerText() {
+    text-align: center;
+    color: white;
+}
+
+// Сброс свойств кнопки
+.button {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    font-family: "Montserrat", sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+
+    .main {
+        .centerBlock;
+        .centerText;
+        flex-direction: column;
+        background: @background;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100%;
+        user-select: none;
+
+        &__content {
+            font-family: "Nunito", sans-serif;
+
+            h1 {
+                font-weight: 1000;
+                font-size: 4.5rem;
+                margin: 1rem;
+                @media screen and (max-width: 600px) {
+                    font-size: 4rem;
+                }
+            }
+
+            h2 {
+                font-weight: 700;
+                font-size: 2rem;
+                margin: 1rem;
+                @media screen and (max-width: 600px) {
+                    font-size: 1.75rem;
+                }
+                @media screen and (max-width: 480px) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            // Кнопка Invite
+            a {
+                button {
+                    .button;
+                    min-width: 300px;
+                    min-height: 60px;
+                    font-family: "Nunito", sans-serif;
+                    font-size: 1.2rem;
+                    letter-spacing: 1.3px;
+                    font-weight: 700;
+                    color: black;
+                    background-color: white;
+                    border-radius: 1000px;
+                    box-shadow: 12px 12px 24px white;
+                    transition: all 0.3s ease-in-out 0s;
+                    cursor: pointer;
+                    position: relative;
+                    padding: 1rem;
+                    margin: 1rem;
+                    z-index: 10;
+
+                    &::before {
+                        content: "";
+                        border-radius: 1000px;
+                        min-width: calc(300px + 12px);
+                        min-height: calc(60px + 12px);
+                        border: 6px solid white;
+                        box-shadow: 0 0 60px white;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        opacity: 0;
+                        transition: all .3s ease-in-out 0s;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        color: #313133;
+                        transform: translateY(-6px);
+                        &::before {
+                            opacity: 1;
+                        }
+                        &::after {
+                            animation: none;
+                            display: none;
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 100%;
+                        border: 6px solid white;
+                        position: absolute;
+                        z-index: -1;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        animation: ring 1.5s infinite;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}

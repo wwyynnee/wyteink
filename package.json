@@ -1,0 +1,15 @@
+{
+  "name": "wyteink",
+  "version": "1.0.0",
+  "description": "Website for Discord server",
+  "main": "index.js",
+  "scripts": {
+    "start": "lessc styles/main.less style.css"
+  },
+  "keywords": [],
+  "author": "Wynne",
+  "license": "ISC",
+  "dependencies": {
+    "less": "^4.1.3"
+  }
+}

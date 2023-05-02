@@ -1,0 +1,168 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunito/v25/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+.button {
+  background: none;
+  outline: none;
+  border: none;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+}
+html .main,
+body .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  flex-direction: column;
+  background: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  user-select: none;
+}
+html .main__content,
+body .main__content {
+  font-family: "Nunito", sans-serif;
+}
+html .main__content h1,
+body .main__content h1 {
+  font-weight: 1000;
+  font-size: 4.5rem;
+  margin: 1rem;
+}
+@media screen and (max-width: 600px) {
+  html .main__content h1,
+  body .main__content h1 {
+    font-size: 4rem;
+  }
+}
+html .main__content h2,
+body .main__content h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 1rem;
+}
+@media screen and (max-width: 600px) {
+  html .main__content h2,
+  body .main__content h2 {
+    font-size: 1.75rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  html .main__content h2,
+  body .main__content h2 {
+    font-size: 1.5rem;
+  }
+}
+html .main__content a button,
+body .main__content a button {
+  background: none;
+  outline: none;
+  border: none;
+  min-width: 300px;
+  min-height: 60px;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1.3px;
+  font-weight: 700;
+  color: black;
+  background-color: white;
+  border-radius: 1000px;
+  box-shadow: 12px 12px 24px white;
+  transition: all 0.3s ease-in-out 0s;
+  cursor: pointer;
+  position: relative;
+  padding: 1rem;
+  margin: 1rem;
+  z-index: 10;
+}
+html .main__content a button::before,
+body .main__content a button::before {
+  content: "";
+  border-radius: 1000px;
+  min-width: calc(300px + 12px);
+  min-height: calc(60px + 12px);
+  border: 6px solid white;
+  box-shadow: 0 0 60px white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out 0s;
+}
+html .main__content a button:hover,
+body .main__content a button:hover,
+html .main__content a button:focus,
+body .main__content a button:focus {
+  color: #313133;
+  transform: translateY(-6px);
+}
+html .main__content a button:hover::before,
+body .main__content a button:hover::before,
+html .main__content a button:focus::before,
+body .main__content a button:focus::before {
+  opacity: 1;
+}
+html .main__content a button:hover::after,
+body .main__content a button:hover::after,
+html .main__content a button:focus::after,
+body .main__content a button:focus::after {
+  animation: none;
+  display: none;
+}
+html .main__content a button::after,
+body .main__content a button::after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  border: 6px solid white;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ring 1.5s infinite;
+}
+@keyframes ring {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    width: 300px;
+    height: 300px;
+    opacity: 0;
+  }
+}
